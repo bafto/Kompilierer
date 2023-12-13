@@ -32,6 +32,7 @@ ENV PATH="${PATH}:/usr/local/go/bin"
 WORKDIR /usr/src
 RUN git clone https://github.com/DDP-Projekt/Kompilierer.git
 WORKDIR /usr/src/Kompilierer
+RUN git switch dev
 RUN go mod tidy
 ENV DDPPATH=/usr/src/Kompilierer/build/DDP
 ENV PATH="${PATH}:/usr/src/Kompilierer/build/DDP/bin"
