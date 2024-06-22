@@ -64,9 +64,9 @@ jobs:
     - name: Create Release Archive
       run: |
         chmod +x ./release.sh
-        ./release.sh ${{ fromJson(steps.download_ddpls.outputs.downloaded_files)[0] }}
+        ./release.sh '${{ fromJson(steps.download_ddpls.outputs.downloaded_files)[0] }}'
         if [[ ${{ runner.os }} == 'Windows' ]]; then
-          ./release.sh ${{ fromJson(steps.download_ddpls.outputs.downloaded_files)[0] }} ${{ fromJson(steps.download_mingw.outputs.downloaded_files)[0] }}
+          ./release.sh '${{ fromJson(steps.download_ddpls.outputs.downloaded_files)[0] }}' '${{ fromJson(steps.download_mingw.outputs.downloaded_files)[0] }}'
         fi
 
     - name: Upload Artifacts
