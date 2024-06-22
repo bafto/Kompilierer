@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    if: github.ref == 'refs/head/master'
+    if: github.ref == 'refs/heads/master'
     runs-on: ${{ matrix.os }}
     defaults:
       run:
