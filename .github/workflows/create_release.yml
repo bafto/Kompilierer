@@ -62,6 +62,7 @@ jobs:
         filename: 'winlibs-x86_64-posix-seh-gcc-12.2.0-mingw-w64ucrt-10.0.0-r5.zip'
 
     - name: Install Zip
+      if: runner.os == 'Windows'
       run: choco install zip -y
 
     - name: Create Release Archive
