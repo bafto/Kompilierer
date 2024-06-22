@@ -43,7 +43,8 @@ jobs:
     - name: Extract Version
       id: extract_version
       if: runner.os == 'Linux'
-      run: echo 'version=$(${{ github.workspace }}/build/DDP/bin/kddp version | head -n1 | cut -d " " -f1)' >> "$GITHUB_OUTPUT"
+      run: |
+        echo "version=$(${{ github.workspace }}/build/DDP/bin/kddp version | head -n1 | cut -d ' ' -f1)" >> "$GITHUB_OUTPUT"
 
     - name: Download DDPLS
       id: download_ddpls
