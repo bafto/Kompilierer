@@ -61,6 +61,9 @@ jobs:
         tag: '12.2.0-16.0.0-10.0.0-ucrt-r5'
         filename: 'winlibs-x86_64-posix-seh-gcc-12.2.0-mingw-w64ucrt-10.0.0-r5.zip'
 
+    - name: Install Zip
+      run: choco install zip -y
+
     - name: Create Release Archive
       run: |
         chmod +x ./release.sh
